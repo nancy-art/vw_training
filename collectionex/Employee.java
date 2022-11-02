@@ -7,7 +7,7 @@ package collectionex;
  * @author NANCY
  *
  */
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
 	private int empid;
 	private String empname;
@@ -21,14 +21,6 @@ public class Employee {
 		/*
 		 * this.empid=11; this.deptno=10; this.empname="xyz"; this.salary=100;
 		 */
-	}
-
-	public Employee(Employee x) {
-		this.deptno = x.deptno;
-		this.empid = x.empid;
-		this.empname = x.empname;
-		this.salary = x.salary;
-
 	}
 
 	public Employee(int empid, String empname, double salary, int deptno) {
@@ -119,4 +111,14 @@ public class Employee {
 		return this.deptno;
 	}
 
+	@Override
+	public int compareTo(Employee e) {
+		// TODO Auto-generated method stub
+		System.out.println("compareTo of Employee called..");
+		
+		   return this.empid - e.empid;
+		
+		//  return  e.empid - this.empid;  //descending order
+
+	}
 }
