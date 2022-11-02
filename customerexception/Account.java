@@ -59,8 +59,8 @@ public class Account {
 	            System.out.println("Current Balance is"+ this.balance+" after withdrawing amt:"+amt);
 	        }
 	        
-	        else if(amt == this.balance) {
-	            //System.out.println("Zero Balance: amt:"+amt+" is greater than your balance:"+this.balance);
+	        else if(this.balance==0) {
+	            //System.out.println("Zero Balance: amt:"+amt+" is equal to than your zero balance:"+this.balance);
 
 	            throw new ZeroBalanceException(this.balance,amt,this.acctNo);
 	        }
